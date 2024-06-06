@@ -1,17 +1,32 @@
+<button
+  matTooltip="Add room"
+  id="addRoomButton"
+  color="primary"
+  mat-icon-button
+>
+  <mat-icon>add</mat-icon>
+</button>
 <mat-accordion>
-    @for (room of rooms; track $index) {
-    <mat-expansion-panel hideToggle (opened)="panelOpenState=true" (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                {{room}}
-            </mat-panel-title>
-            <mat-panel-description>
-                The items stored in your rooms
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
-    } @empty {
-    <p>No rooms yet!</p>
-    }
+  @for (room of rooms; track $index) {
+  <mat-expansion-panel
+    hideToggle
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ room.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ room.description }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+  } @empty {
+  <p>No rooms yet!</p>
+  <dd></dd>
+  }
 </mat-accordion>
+
+<!-- <a target="_blank" href="https://icons8.com/icon/102544/add">Hinzufügen</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->

@@ -5,7 +5,8 @@ import { MatExpansionModule, MatAccordion } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddRoomService } from '../../services/add-room.service';
 
 interface Room {
   name: string;
@@ -43,9 +44,9 @@ enum PRIORITY {
   styleUrl: './room-list.component.scss',
 })
 export class RoomListComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(private addRoomDialog: AddRoomService) {}
   openDialog() {
-    // const dialogRef = this.dialog.open(x);
+    this.addRoomDialog.openDialog();
   }
   imageFolder: string = 'assets/';
 
@@ -119,14 +120,3 @@ export class RoomListComponent {
   ];
   panelOpenState = false;
 }
-
-// @Component({
-//   selector: 'app-add-room',
-//   standalone: true,
-//   imports: [],
-//   templateUrl: 'C:/Users/leonp/Desktop/Web stuff/Frontend/dint/src/app/components/add-room/add-room.component.html',
-//   styleUrl: 'add-room.component.scss'
-// })
-// export class AddRoomComponent {
-
-// }

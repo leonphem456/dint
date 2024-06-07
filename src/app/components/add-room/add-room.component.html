@@ -1,1 +1,19 @@
-<p>add-room works!</p>
+<form>
+  <h2 class="header">Add room</h2>
+  <mat-form-field class="inputField">
+    <mat-label>Name</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field class="inputField">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Name" />
+  </mat-form-field>
+
+  <mat-action-list>
+    <button class="actionButton" type="submit" color="primary" mat-flat-button>
+      Add
+    </button>
+    <button class="actionButton" mat-flat-button>Cancel</button>
+  </mat-action-list>
+</form>

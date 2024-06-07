@@ -1,4 +1,4 @@
-<button
+<button (click)="openDialog()"
   matTooltip="Add room"
   id="addRoomButton"
   color="primary"
@@ -22,29 +22,41 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <!-- TODO Implementing grid list to display cards next to each other -->
-    @for (item of room.items; track $index) {
-    <mat-card class="item-card">
-      <mat-card-header>
-        <div mat-card-avatar></div>
-        <!-- Item name -->
-        <mat-card-title>{{ item.name }}</mat-card-title>
-        <!-- Item priority -->
-        <mat-card-subtitle>{{ item.priority }}</mat-card-subtitle>
-      </mat-card-header>
-      <img class="item-img" mat-card-image src="assets/tv.png" alt="" />
-      <mat-card-content>
-        <p>{{ item.note }}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
-    </mat-card>
-    }
+    <mat-grid-list cols="1" rowHeight="350px">
+      <mat-grid-tile style="overflow-x: scroll">
+        <button
+          matTooltip="Add item"
+          id="addRoomButton"
+          color="primary"
+          mat-icon-button
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+        @for (item of room.items; track $index) {
+
+        <mat-card class="item-card">
+          <mat-card-header>
+            <div mat-card-avatar></div>
+            <!-- Item name -->
+            <mat-card-title>{{ item.name }}</mat-card-title>
+            <!-- Item priority -->
+            <mat-card-subtitle>{{ item.priority }}</mat-card-subtitle>
+          </mat-card-header>
+          <img class="item-img" mat-card-image src="assets/tv.png" alt="" />
+          <mat-card-content>
+            <p>{{ item.note }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+        }
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-expansion-panel>
   } @empty {
   <p>No rooms yet!</p>
-  <dd></dd>
   }
 </mat-accordion>
 

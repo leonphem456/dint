@@ -1,9 +1,16 @@
 .item-card {
   max-width: 250px;
   margin-right: 15px;
+
+  // background-color: red;
 }
 
 .item-img {
   max-width: 150px;
-  float: right;
+}
+
+@media screen and (max-width: 480px) {
+  .item-card {
+    // background-color: aqua;
+  }
 }

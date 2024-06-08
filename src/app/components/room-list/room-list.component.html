@@ -1,4 +1,3 @@
-<button (click)="openDialog()"
 <button
   (click)="openAddRoomDialog()"
   matTooltip="Add room"
@@ -23,10 +22,10 @@
         {{ room.description }}
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <!-- TODO Implementing grid list to display cards next to each other -->
     <mat-grid-list cols="1" rowHeight="350px">
       <mat-grid-tile style="overflow-x: scroll">
         <button
+          (click)="openAddItemDialog()"
           matTooltip="Add item"
           id="addRoomButton"
           color="primary"

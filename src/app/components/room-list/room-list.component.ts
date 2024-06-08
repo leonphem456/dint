@@ -6,7 +6,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddRoomService } from '../../services/add-room.service';
 import { AddRoomService } from '../../services/dialogs/add-room/add-room.service';
 import { AddItemService } from '../../services/dialogs/add-item/add-item.service';
 

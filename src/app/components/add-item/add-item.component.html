@@ -1,0 +1,52 @@
+<form>
+  <h2 class="header">Add item</h2>
+  <mat-form-field class="inputField">
+    <mat-label>Name</mat-label>
+    <input matInput />
+  </mat-form-field>
+
+  <mat-form-field class="inputField">
+    <mat-label>Priority</mat-label>
+    <mat-select>
+      <mat-option value="HIGH">HIGH</mat-option>
+      <mat-option value="MEDIUM">MEDIUM</mat-option>
+      <mat-option value="LOW">LOW</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="inputField">
+    <mat-label>Description</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <!-- https://stackoverflow.com/questions/52622061/how-to-use-input-type-file-in-angular-material -->
+  <button (click)="fileInput.click()" mat-raised-button class="inputField">
+    Photo upload
+  </button>
+  <input
+    (selectionchange)="getPathFromSelectedFile()"
+    hidden
+    type="file"
+    id="file"
+    name="file"
+    #fileInput
+  />
+
+  <mat-action-list>
+    <button
+      mat-dialog-close
+      class="actionButton"
+      type="submit"
+      color="primary"
+      mat-flat-button
+    >
+      Add
+    </button>
+    <button class="actionButton" mat-raised-button>Cancel</button>
+  </mat-action-list>
+</form>
+
+<!-- name: string;
+priority: PRIORITY;
+img: string;
+note: string -->

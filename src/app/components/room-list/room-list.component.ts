@@ -8,6 +8,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddRoomService } from '../../services/dialogs/add-room/add-room.service';
 import { AddItemService } from '../../services/dialogs/add-item/add-item.service';
+import { MatTabsModule } from '@angular/material/tabs';
 
 interface Room {
   name: string;
@@ -40,16 +41,20 @@ enum PRIORITY {
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
+    MatTabsModule,
   ],
   templateUrl: './room-list.component.html',
   styleUrl: './room-list.component.scss',
 })
 export class RoomListComponent {
-  constructor(private addRoomDialog: AddRoomService, private addItemDialog: AddItemService) {}
+  constructor(
+    private addRoomDialog: AddRoomService,
+    private addItemDialog: AddItemService
+  ) {}
   openAddRoomDialog() {
     this.addRoomDialog.openDialog();
-  }  
-  
+  }
+
   openAddItemDialog() {
     this.addItemDialog.openDialog();
   }

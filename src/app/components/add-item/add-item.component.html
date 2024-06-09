@@ -20,30 +20,15 @@
   </mat-form-field>
 
   <!-- https://stackoverflow.com/questions/52622061/how-to-use-input-type-file-in-angular-material -->
-  <button (click)="fileInput.click()" mat-raised-button class="inputField">
+  <!-- <button mat-raised-button (click)="fileInput.click()" class="inputField">
     Photo upload
-  </button>
-  <input
-    (selectionchange)="getPathFromSelectedFile()"
-    hidden
-    type="file"
-    id="file"
-    name="file"
-    #fileInput
-  />
+  </button> -->
+  <input class="inputField" type="file" id="file" name="file" #fileInput />
 
   <mat-action-list>
-    <button
-      mat-dialog-close
-      class="actionButton"
-      type="submit"
-      color="primary"
-      mat-flat-button
-    >
+    <button class="actionButton" type="submit" color="primary" mat-flat-button>
       Add
     </button>
     <button class="actionButton" mat-raised-button>Cancel</button>
   </mat-action-list>
 </form>
-
-

@@ -37,8 +37,12 @@
             <p>{{ item.note }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <button matTooltip="Sell item" mat-icon-button>
+              <mat-icon>attach_money</mat-icon>
+            </button>
+            <button matTooltip="Edit item" mat-icon-button>
+              <mat-icon>edit</mat-icon>
+            </button>
           </mat-card-actions>
         </mat-card>
         }

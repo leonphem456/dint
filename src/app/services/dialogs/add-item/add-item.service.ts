@@ -10,9 +10,8 @@ export class AddItemService {
 
   openDialog() {
     this.dialog.open(AddItemComponent, {
-      width: '350px',
+      width: '300px',
       height: '400px',
-      disableClose: true,
     });
   }
 }

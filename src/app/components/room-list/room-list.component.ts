@@ -45,16 +45,20 @@ enum PRIORITY {
   styleUrl: './room-list.component.scss',
 })
 export class RoomListComponent {
-  constructor(private addRoomDialog: AddRoomService, private addItemDialog: AddItemService) {}
+  constructor(
+    private addRoomDialog: AddRoomService,
+    private addItemDialog: AddItemService
+  ) {}
   openAddRoomDialog() {
     this.addRoomDialog.openDialog();
-  }  
-  
+  }
+
   openAddItemDialog() {
     this.addItemDialog.openDialog();
   }
   imageFolder: string = 'assets/';
   panelOpenState = false;
+  expanded = true;
 
   rooms: Room[] = [
     {
